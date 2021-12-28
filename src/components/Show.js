@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
-import { TodoContext } from "./components/Todo"
-import List from "./components/List"
+import { TodoContext } from "./Todo"
+import List from "./List"
 
-const SHow = () => {
+const Show = () => {
   const todos = useContext(TodoContext)
   const todo_list = todos?.state?.todos.map((todo) => {
     return <List key={todo.id} todo={todo} />
@@ -19,4 +19,4 @@ const styles = {
     padding: "15px",
   },
 }
-export default SHow
+export default Show

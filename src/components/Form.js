@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { EditorState, convertFromHTML, ContentState } from "draft-js"
 import { Editor } from "react-draft-wysiwyg"
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
-import SHow from "../SHow"
+import Show from "./Show"
 import { TodoContext } from "./Todo"
 import { convertToHTML } from "draft-convert"
 
@@ -65,7 +65,7 @@ const Form = () => {
           </button>
         </div>
       </form>
-      <SHow />
+      <Show />
     </>
   )
 }
