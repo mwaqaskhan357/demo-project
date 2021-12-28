@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { EditorState, convertFromHTML } from "draft-js"
+import { EditorState, convertFromHTML, ContentState } from "draft-js"
 import { Editor } from "react-draft-wysiwyg"
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 import SHow from "../SHow"
@@ -38,8 +38,12 @@ const Form = () => {
 
   useEffect(() => {
     if (state.isEdit) {
-      const blocksFromHTML = convertFromHTML(state.item.text)
-      console.log(setEditorState(blocksFromHTML))
+      const { contentBlocks, entityMap } = convertFromHTML(state.item.text)
+      const contentState = ContentState.createFromBlockArray(
+        contentBlocks,
+        entityMap
+      )
+      setEditorState(EditorState.createWithContent(contentState))
     }
   }, [state])
 
