@@ -19,4 +19,5 @@ const styles = {
     padding: "15px",
   },
 }
+
 export default Show
